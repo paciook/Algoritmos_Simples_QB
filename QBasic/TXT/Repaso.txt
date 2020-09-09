@@ -1,0 +1,39 @@
+DIM a(5), b(5), c(5), r(3) AS INTEGER
+FOR x = 1 TO 5
+    INPUT "Que numero quiere ingresar al vector a"; a(x)
+    CLS
+NEXT
+FOR y = 1 TO 5
+    INPUT "Que numero quiere ingresar al vector b"; b(y)
+    CLS
+NEXT
+FOR x = 1 TO 5
+    c(x) = a(x) + b(x)
+    PRINT "la "; x; " suma es "; c(x)
+NEXT
+FOR a = 1 TO 5
+    IF banana = 0 THEN
+        r(1) = c(a)
+        banana = 1
+    ELSE
+        IF c(a) > r(1) THEN
+            r(1) = c(a)
+        END IF
+    END IF
+NEXT
+PRINT "El maximo es "; r(1)
+FOR a = 1 TO 5
+    IF banana = 1 THEN
+        r(2) = c(a)
+        banana = 2
+    ELSE
+        IF c(a) < r(2) THEN
+            r(2) = c(a)
+        END IF
+    END IF
+NEXT
+PRINT "El minimo es "; r(2)
+FOR a = 1 TO 5
+    r(3) = r(3) + c(a)
+NEXT
+PRINT "El promedio de todo es "; r(3) / 5

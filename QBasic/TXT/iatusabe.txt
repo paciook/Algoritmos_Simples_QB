@@ -1,0 +1,20 @@
+DIM palabras(5) AS STRING
+DIM orden(50) AS STRING
+DIM reversa(5)
+i = 1
+FOR x = 1 TO 5
+    INPUT "Ingrese una palabra "; palabras(x)
+NEXT
+CLS
+FOR y = 1 TO 5
+    cant = LEN(palabras(y))
+    FOR x = 1 TO cant
+        orden(x) = MID$(palabras(y), x, 1)
+    NEXT
+    FOR x = cant TO 1 STEP -1
+        LOCATE y, i
+        PRINT orden(x)
+        i = i + 1
+    NEXT
+    i = 1
+NEXT

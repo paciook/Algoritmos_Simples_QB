@@ -1,0 +1,41 @@
+DIM vec(8) AS STRING
+DIM letra AS STRING * 1
+DIM pl AS STRING
+DIM pv AS STRING
+DIM pal AS STRING
+DIM i, mp, mv, cv, x AS INTEGER
+CLS
+FOR x = 1 TO 8
+    INPUT "Ingrese una palabra"; vec(x)
+NEXT
+FOR i = 1 TO 5
+    cv = 0
+    largo = LEN(RTRIM$(vec(i)))
+    FOR x = 1 TO largo
+        letra = UCASE$(MID$(RTRIM$(vec(i)), x, 1))
+        IF letra = "A" OR letra = "E" OR letra = "I" OR letra = "O" OR letra = "U" THEN
+            cv = cv + 1
+        END IF
+    NEXT
+    IF mp = 0 THEN
+        mp = largo
+        pl = vec(i)
+        mv = cv
+        pv = vec(i)
+    ELSE
+        IF cv > mv THEN
+            mv = cv
+            pv = vec(i)
+        END IF
+        IF largo > mp THEN
+            mp = largo
+            pl = vec(i)
+        END IF
+    END IF
+NEXT
+PRINT "*************************"
+PRINT "La palabra con mayor cantidad de letras es "; pl; " con"; mp; " letras"
+PRINT "*************************"
+IF mv > 0 THEN
+    PRINT "La palabra con mayor cantidad de vocales es "; pv; " con "; mv; " vocales"
+END IF

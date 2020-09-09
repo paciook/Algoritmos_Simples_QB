@@ -1,0 +1,22 @@
+DIM num(15) AS LONG
+PRINT "Ingrese 15 numeros"
+FOR a = 1 TO 15
+    DO
+        INPUT num(a)
+    LOOP UNTIL num(a) <> 0
+    numsuma = numsuma + num(a)
+    IF num(a) MOD 2 = 0 THEN
+        IF num(a) > maxp THEN
+            maxp = num(a)
+        END IF
+    ELSE
+        IF num(a) > maxip THEN
+            maxip = num(a)
+        END IF
+    END IF
+NEXT
+
+PRINT "La suma de los numeros es "; numsuma
+PRINT "El mayor de los pares es "; maxp
+PRINT "El mayor de los impares es "; maxip
+

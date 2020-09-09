@@ -1,0 +1,42 @@
+DIM M(5, 5) AS INTEGER
+FOR x = 1 TO 5
+    FOR y = 1 TO 5
+        INPUT "Ingrese un numero a la variable "; M(x, y)
+        CLS
+    NEXT
+NEXT
+FOR a = 1 TO 5
+    diagonal = diagonal + M(a, a)
+NEXT
+PRINT "La suma de la diagonal es "; diagonal
+FOR b = 2 TO 3
+    FOR c = 1 TO 5
+        prom = prom + M(c, b)
+        cant = cant + 1
+    NEXT
+NEXT
+PRINT "El promedio es "; prom / 10
+FOR d = 1 TO 5
+    IF banana = 0 THEN
+        min = M(d, 4)
+        banana = 1
+    ELSE
+        IF M(d, 4) < min THEN
+            min = M(d, 4)
+        END IF
+    END IF
+NEXT
+PRINT "El minimo de la 4ta columna es "; min
+FOR x = 1 TO 5
+    FOR y = 1 TO 5
+        IF platano = 0 THEN
+            max = M(x, y)
+            platano = 1
+        ELSE
+            IF M(x, y) > max THEN
+                max = M(x, y)
+            END IF
+        END IF
+    NEXT
+NEXT
+PRINT "El maximo es "; max
